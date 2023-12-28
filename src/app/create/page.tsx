@@ -3,7 +3,9 @@ import React from "react";
 
 const CreatePost = () => {
   const createPost = async () => {
-    const response = await fetch("http://localhost:3000/api/create");
+    const response = await fetch("http://localhost:3000/api/create", {
+      method: "POST",
+    });
     const data = await response.json();
     console.log(data);
   };

@@ -9,10 +9,19 @@ export async function POST() {
       Message: "test",
     };
 
-    const record = await pb.collection("posts").create(data);
+    const record = await fetch(
+      "https://passage.pockethost.io/api/collections/posts/records",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
     return Response.json({ message: record });
   } catch (error) {
-    return Response.json({ message: error });
+    return Response.json({ Error: error });
   }
 }
