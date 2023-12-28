@@ -29,12 +29,16 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-[#2b5657]">
       <Image src={flower} alt="flower" className="w-100" />
-      <div className=" min-h-screen flex flex-col justify-center items-center">
+      <div className=" min-h-screen flex flex-col justify-center items-center ">
         <h1 className=" text-4xl">Messages</h1>
-        <div className=" p-10 m-10">
-          <p>{records ? JSON.stringify(records) : "Loading"}</p>
+        <div className="">
+          <div className="max-w-40 overflow-hidden">
+            {records ? JSON.stringify(records) : "Loading"}
+          </div>
         </div>
-        <Link href="/create">Add New</Link>
+        <button className="p-6 border border-s-orange-100 rounded-full m-10">
+          <Link href="/create">Add New</Link>
+        </button>
       </div>
     </main>
   );
