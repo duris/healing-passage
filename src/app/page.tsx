@@ -31,7 +31,7 @@ export default async function Home() {
       <Image src={flower} alt="flower" className="w-100" />
       <div className=" min-h-screen flex flex-col justify-center items-center">
         <h1 className=" text-4xl">Messages</h1>
-        <div className="border border-dashed rounded-full border-red-100 p-20 m-20 max-w-[70%]">
+        <div className=" p-10 m-10">
           <p>{records ? JSON.stringify(records) : "Loading"}</p>
         </div>
         <Link href="/create">Add New</Link>
